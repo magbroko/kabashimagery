@@ -59,13 +59,13 @@ export function Services() {
 
           <motion.div
             variants={gridContainerVariants}
-            className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-4 md:grid-rows-[auto_auto_auto] md:gap-12 [transform-style:preserve-3d]"
+            className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 [transform-style:preserve-3d]"
           >
             {services.map((s) => (
               <motion.div
                 key={s.title}
                 variants={sectionUnfoldItem}
-                className={`[transform-style:preserve-3d] ${s.gridClassName}`}
+                className="h-full min-h-0 [transform-style:preserve-3d]"
               >
                 <ServiceCard
                   title={s.title}

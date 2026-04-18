@@ -40,12 +40,12 @@ export function ServiceCard({
 
   return (
     <div
-      className="h-full [transform-style:preserve-3d]"
+      className={`flex h-full min-h-0 flex-col [transform-style:preserve-3d] ${className}`}
       style={{ perspective: '1000px' }}
     >
       <motion.div
         ref={ref}
-        className={`glass-panel group relative flex h-full flex-col overflow-hidden rounded-3xl p-10 transition-shadow duration-300 ease-in-out hover:shadow-[0_0_64px_-12px_rgb(255_255_255_/_0.14),0_0_1px_0_rgb(255_255_255_/_0.08)] ${className}`}
+        className="glass-panel group relative flex h-full min-h-0 flex-col overflow-hidden rounded-3xl p-10 transition-shadow duration-300 ease-in-out hover:shadow-[0_0_64px_-12px_rgb(255_255_255_/_0.14),0_0_1px_0_rgb(255_255_255_/_0.08)]"
         style={{
           rotateX,
           rotateY,
@@ -56,8 +56,8 @@ export function ServiceCard({
         onPointerMove={handlePointerMove}
         onPointerLeave={handlePointerLeave}
       >
-        <div className="relative z-[1] flex min-h-0 flex-1 flex-col items-start transition-all duration-300 ease-in-out">
-          <div className="mb-6 inline-flex rounded-2xl bg-foreground/[0.06] p-3.5 text-champagne ring-1 ring-inset ring-white/[0.06] transition-all duration-300 ease-in-out group-hover:text-champagne-bright group-hover:ring-white/[0.1]">
+        <div className="relative z-[1] flex min-h-0 flex-1 flex-col items-stretch transition-all duration-300 ease-in-out">
+          <div className="mb-6 inline-flex self-start rounded-2xl bg-foreground/[0.06] p-3.5 text-champagne ring-1 ring-inset ring-white/[0.06] transition-all duration-300 ease-in-out group-hover:text-champagne-bright group-hover:ring-white/[0.1]">
             <Icon
               className="size-8 transition-colors duration-300 ease-in-out"
               strokeWidth={ICON_STROKE}
@@ -67,7 +67,7 @@ export function ServiceCard({
           <h3 className="font-serif text-xl font-semibold tracking-tight text-foreground md:text-2xl">
             {title}
           </h3>
-          <p className="mt-4 max-w-prose text-pretty text-sm leading-relaxed text-body-soft/90 md:text-[15px] md:leading-[1.65]">
+          <p className="mt-4 max-w-prose flex-1 text-pretty text-sm leading-relaxed text-body-soft/90 md:text-[15px] md:leading-[1.65]">
             {description}
           </p>
         </div>
